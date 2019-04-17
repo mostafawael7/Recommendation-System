@@ -1,14 +1,18 @@
 package SWE_Project.Evaluator.service;
 
-import SWE_Project.Evaluator.model.*;
+import SWE_Project.Evaluator.model.Company;
+import SWE_Project.Evaluator.model.Rule;
+import SWE_Project.Evaluator.model.User;
 import javafx.util.Pair;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class EvaluatorService {
 
     // TODO request the current users of the system from an API.
-    private static List<User> getCurrentUsers() {
+    private List<User> getCurrentUsers() {
         List<User> users = new ArrayList<>();
         List<String> interests = new ArrayList<>();
         Map<String, Integer> scores = new HashMap<>();
@@ -16,16 +20,29 @@ public class EvaluatorService {
         interests.add("java");
         scores.put("C++", 30);
         scores.put("java", 20);
-        users.add(new User("Ahmed", 28, interests, scores));
+        users.add(new User().name("Ahmed").age(25).interests(interests).scores(scores));
+        interests = new ArrayList<>();
+        interests.add("C++");
+        interests.add("java");
         interests.add("problem-solving");
+        scores = new HashMap<>();
+        scores.put("C++", 30);
+        scores.put("java", 20);
+        scores.put("problem-solving", 90);
+        users.add(new User().name("Mona").age(21).interests(interests).scores(scores));
+        interests = new ArrayList<>();
+        interests.add("C++");
+        interests.add("java");
+        interests.add("problem-solving");
+        scores = new HashMap<>();
+        scores.put("C++", 30);
+        scores.put("java", 20);
         scores.put("problem-solving", 30);
-        users.add(new User("Aya", 22, interests, scores));
-        scores.put("problem-solving", 50);
-        users.add(new User("Mona", 21, interests, scores));
+        users.add(new User().name("Aya").age(22).interests(interests).scores(scores));
         return users;
     }
 
-    private static boolean isMatch(User user, Company company) {
+    private boolean isMatch(User user, Company company) {
         List<String> companyInterests = company.getInterests();
         List<String> userInterests = user.getInterests();
         for (int i = 0; i < companyInterests.size(); i++) {
@@ -50,7 +67,7 @@ public class EvaluatorService {
         return true;
     }
 
-    private static List<User> sort(List<User> users) {
+    private List<User> sort(List<User> users) {
         List<Pair<Integer, Integer>> temp = new ArrayList<>();
         for (int i = 0; i < users.size(); i++) {
             User user = users.get(i);
@@ -74,7 +91,7 @@ public class EvaluatorService {
         return sortedUsers;
     }
 
-    public static List<User> getRecommendedUsers(Company company) {
+    public List<User> getRecommendedUsers(Company company) {
         List<User> recommendedUsers = new ArrayList<>();
         List<User> currentUsers = getCurrentUsers();
         for (int i = 0; i < currentUsers.size(); i++) {
