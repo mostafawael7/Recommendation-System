@@ -5,10 +5,9 @@ public class Rule {
     private Character comparator;
     private int value;
 
-    public Rule(String object, Character comparator, int value) {
+    public Rule object(String object) {
         this.object = object;
-        this.comparator = comparator;
-        this.value = value;
+        return this;
     }
 
     public String getObject() {
@@ -19,12 +18,22 @@ public class Rule {
         this.object = object;
     }
 
+    public Rule comparator(Character comparator) {
+        this.comparator = comparator;
+        return this;
+    }
+
     public Character getComparator() {
         return comparator;
     }
 
     public void setComparator(Character comparator) {
         this.comparator = comparator;
+    }
+
+    public Rule value(int value) {
+        this.value = value;
+        return this;
     }
 
     public int getValue() {
