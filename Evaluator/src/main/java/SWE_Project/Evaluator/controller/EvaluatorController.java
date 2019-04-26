@@ -4,7 +4,6 @@ import SWE_Project.Evaluator.service.EvaluatorService;
 import SWE_Project.Evaluator.model.Company;
 import SWE_Project.Evaluator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,4 +19,10 @@ public class EvaluatorController {
     public List<User> getRecommendedUsers(@RequestBody Company company) {
         return evaluatorService.getRecommendedUsers(company);
     }
+
+    @RequestMapping(value = "/quizzes", method = RequestMethod.POST)
+    public List<String> getRecommendedQuizzes(@RequestBody Company company) {
+        return evaluatorService.getRecommendedQuizzes(company);
+    }
+
 }

@@ -16,26 +16,26 @@ public class EvaluatorService {
         List<User> users = new ArrayList<>();
         List<String> interests = new ArrayList<>();
         Map<String, Integer> scores = new HashMap<>();
-        interests.add("C++");
+        interests.add("c++");
         interests.add("java");
-        scores.put("C++", 30);
+        scores.put("c++", 30);
         scores.put("java", 20);
         users.add(new User().name("Ahmed").age(25).interests(interests).scores(scores));
         interests = new ArrayList<>();
-        interests.add("C++");
+        interests.add("c++");
         interests.add("java");
         interests.add("problem-solving");
         scores = new HashMap<>();
-        scores.put("C++", 30);
+        scores.put("c++", 30);
         scores.put("java", 20);
         scores.put("problem-solving", 90);
         users.add(new User().name("Mona").age(21).interests(interests).scores(scores));
         interests = new ArrayList<>();
-        interests.add("C++");
+        interests.add("c++");
         interests.add("java");
         interests.add("problem-solving");
         scores = new HashMap<>();
-        scores.put("C++", 30);
+        scores.put("c++", 30);
         scores.put("java", 20);
         scores.put("problem-solving", 30);
         users.add(new User().name("Aya").age(22).interests(interests).scores(scores));
@@ -101,4 +101,26 @@ public class EvaluatorService {
         }
         return sort(recommendedUsers);
     }
+
+    // TODO request the current quizzes of the system from an API.
+    private List<String> getCurrentQuizzes() {
+        List<String> quizzes = new ArrayList<>();
+        quizzes.add("c++");
+        quizzes.add("problem-solving");
+        return quizzes;
+    }
+
+    public List<String> getRecommendedQuizzes(Company company) {
+        List<String> recommendedQuizzes = new ArrayList<>();
+        List<String> currentQuizzes = getCurrentQuizzes();
+        List<Rule> companyRules = company.getRules();
+        for (int i = 0; i < companyRules.size(); i++) {
+            String skill = companyRules.get(i).getObject();
+            if (currentQuizzes.indexOf(skill) != -1)
+                recommendedQuizzes.add(skill);
+        }
+        return recommendedQuizzes;
+    }
+
+
 }

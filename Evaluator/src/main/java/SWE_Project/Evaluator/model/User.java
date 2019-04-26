@@ -3,7 +3,6 @@ package SWE_Project.Evaluator.model;
 import java.util.List;
 import java.util.Map;
 
-// lombok
 public class User {
     private String name;
     private int age;

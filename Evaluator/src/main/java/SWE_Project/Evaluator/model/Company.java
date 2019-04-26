@@ -1,13 +1,8 @@
 package SWE_Project.Evaluator.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
-// java reflections
-
 public class Company {
-    // @JsonProperty("name")
     private String name;
     private List<String> interests;
     private List<Rule> rules;
