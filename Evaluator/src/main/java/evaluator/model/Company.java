@@ -1,4 +1,4 @@
-package SWE_Project.Evaluator.model;
+package evaluator.model;
 
 import java.util.List;
 
