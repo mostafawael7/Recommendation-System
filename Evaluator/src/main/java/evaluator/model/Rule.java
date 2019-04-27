@@ -1,4 +1,4 @@
-package SWE_Project.Evaluator.model;
+package evaluator.model;
 
 public class Rule {
     private String object;

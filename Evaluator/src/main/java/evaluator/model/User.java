@@ -1,9 +1,8 @@
-package SWE_Project.Evaluator.model;
+package evaluator.model;
 
 import java.util.List;
 import java.util.Map;
 
-// lombok
 public class User {
     private String name;
     private int age;
@@ -60,5 +59,13 @@ public class User {
 
     public void setScores(Map<String, Integer> scores) {
         this.scores = scores;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
