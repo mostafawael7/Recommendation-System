@@ -1,6 +1,7 @@
 package evaluator.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Company {
     private String name;
@@ -12,15 +13,6 @@ public class Company {
         return this;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
     public Company interests(List<String> interests) {
         this.interests = interests;
         return this;
@@ -28,10 +20,6 @@ public class Company {
 
     public List<String> getInterests() {
         return interests;
-    }
-
-    public void setInterests(List<String> interests) {
-        this.interests = interests;
     }
 
     public Company rules(List<Rule> rules) {
@@ -43,7 +31,22 @@ public class Company {
         return rules;
     }
 
-    public void setRules(List<Rule> rules) {
-        this.rules = rules;
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", interests=" + interests +
+                ", rules=" + rules +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return Objects.equals(name, company.name) &&
+                Objects.equals(interests, company.interests) &&
+                Objects.equals(rules, company.rules);
     }
 }

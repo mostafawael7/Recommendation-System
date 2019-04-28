@@ -2,6 +2,7 @@ package evaluator.model;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class User {
     private String name;
@@ -14,25 +15,9 @@ public class User {
         return this;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public User age(int age) {
         this.age = age;
         return this;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public User interests(List<String> interests) {
@@ -44,10 +29,6 @@ public class User {
         return interests;
     }
 
-    public void setInterests(List<String> interests) {
-        this.interests = interests;
-    }
-
     public User scores(Map<String, Integer> scores) {
         this.scores = scores;
         return this;
@@ -57,15 +38,24 @@ public class User {
         return scores;
     }
 
-    public void setScores(Map<String, Integer> scores) {
-        this.scores = scores;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", interests=" + interests +
+                ", scores=" + scores +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(interests, user.interests) &&
+                Objects.equals(scores, user.scores);
     }
 }
