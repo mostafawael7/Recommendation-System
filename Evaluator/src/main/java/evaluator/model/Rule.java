@@ -1,5 +1,7 @@
 package evaluator.model;
 
+import java.util.Objects;
+
 public class Rule {
     private String object;
     private Character comparator;
@@ -14,10 +16,6 @@ public class Rule {
         return object;
     }
 
-    public void setObject(String object) {
-        this.object = object;
-    }
-
     public Rule comparator(Character comparator) {
         this.comparator = comparator;
         return this;
@@ -25,10 +23,6 @@ public class Rule {
 
     public Character getComparator() {
         return comparator;
-    }
-
-    public void setComparator(Character comparator) {
-        this.comparator = comparator;
     }
 
     public Rule value(int value) {
@@ -40,7 +34,22 @@ public class Rule {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    @Override
+    public String toString() {
+        return "Rule{" +
+                "object='" + object + '\'' +
+                ", comparator=" + comparator +
+                ", value=" + value +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rule rule = (Rule) o;
+        return value == rule.value &&
+                Objects.equals(object, rule.object) &&
+                Objects.equals(comparator, rule.comparator);
     }
 }

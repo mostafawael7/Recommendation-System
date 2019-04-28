@@ -29,13 +29,14 @@ public class EvaluatorService {
         interests.add("problem-solving");
         scores = new HashMap<>();
         scores.put("c++", 30);
+        scores.put("java", 15);
+        scores.put("problem-solving", 30);
+        users.add(new User().name("Menna").age(22).interests(interests).scores(scores));
+        scores = new HashMap<>();
+        scores.put("c++", 30);
         scores.put("java", 20);
         scores.put("problem-solving", 30);
         users.add(new User().name("Aya").age(22).interests(interests).scores(scores));
-        interests = new ArrayList<>();
-        interests.add("c++");
-        interests.add("java");
-        interests.add("problem-solving");
         scores = new HashMap<>();
         scores.put("c++", 30);
         scores.put("java", 20);
