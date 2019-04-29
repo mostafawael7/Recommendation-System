@@ -133,7 +133,7 @@ public class EvaluatorService {
                 recommendedUsers.add(user);
             }
         }
-        return sort(recommendedUsers);
+        return recommendedUsers;
     }
 
     public List<String> getRecommendedQuizzes(Company company) {
