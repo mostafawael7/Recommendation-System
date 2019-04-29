@@ -1,8 +1,6 @@
 package evaluator.controller;
 
-import evaluator.model.CompaniesRequest;
-import evaluator.model.Company;
-import evaluator.model.User;
+import evaluator.model.*;
 import evaluator.service.EvaluatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
