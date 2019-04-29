@@ -16,17 +16,12 @@ public class EvaluatorService {
      */
     private List<User> getCurrentUsers() {
         List<User> users = new ArrayList<>();
-        List<String> interests = new ArrayList<>();
+        List<String> interests = new ArrayList<>(Arrays.asList("c++", "java"));
         Map<String, Integer> scores = new HashMap<>();
-        interests.add("c++");
-        interests.add("java");
         scores.put("c++", 30);
         scores.put("java", 20);
         users.add(new User().name("Ahmed").age(25).interests(interests).scores(scores));
-        interests = new ArrayList<>();
-        interests.add("c++");
-        interests.add("java");
-        interests.add("problem-solving");
+        interests = new ArrayList<>(Arrays.asList("c++", "java", "problem-solving"));
         scores = new HashMap<>();
         scores.put("c++", 30);
         scores.put("java", 15);
@@ -49,9 +44,7 @@ public class EvaluatorService {
      * TODO: request the current quizzes of the system from an API.
      */
     private List<String> getCurrentQuizzes() {
-        List<String> quizzes = new ArrayList<>();
-        quizzes.add("c++");
-        quizzes.add("problem-solving");
+        List<String> quizzes = new ArrayList<>(Arrays.asList("c++", "problem-solving"));
         return quizzes;
     }
 
@@ -60,25 +53,18 @@ public class EvaluatorService {
      */
     private List<Company> getCurrentCompanies() {
         List<Company> companies = new ArrayList<>();
-        List<String> interests = new ArrayList<>();
+        List<String> interests = new ArrayList<>(Arrays.asList("c++", "ruby"));
         List<Rule> rules = new ArrayList<>();
-        interests.add("c++");
-        interests.add("ruby");
         rules.add(new Rule().object("c++").comparator('>').value(20));
         rules.add(new Rule().object("ruby").comparator('<').value(30));
         companies.add(new Company().name("Company1").interests(interests).rules(rules));
-        interests = new ArrayList<>();
+        interests = new ArrayList<>(Arrays.asList("c++", "java"));
         rules = new ArrayList<>();
-        interests.add("c++");
-        interests.add("java");
         rules.add(new Rule().object("c++").comparator('>').value(20));
         rules.add(new Rule().object("java").comparator('>').value(30));
         companies.add(new Company().name("Company2").interests(interests).rules(rules));
-        interests = new ArrayList<>();
+        interests = new ArrayList<>(Arrays.asList("c++", "java", "problem-solving"));
         rules = new ArrayList<>();
-        interests.add("c++");
-        interests.add("java");
-        interests.add("problem-solving");
         rules.add(new Rule().object("c++").comparator('>').value(20));
         rules.add(new Rule().object("java").comparator('<').value(30));
         rules.add(new Rule().object("problem-solving").comparator('=').value(90));
