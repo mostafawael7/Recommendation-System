@@ -43,13 +43,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				    <configuration>
-    <includes>
-   
-        <include>**/EvaluatorServiceTests.java</include>
-	    <include>**/EvaluatorServiceTests.java</include>
-    </includes>
+        <includes>
+            <include>**/*EvaluatorServiceTests.java</include>
+        </includes>
     </configuration>
-			</plugin>
+    <executions>
+        <execution>
+            <id>failsafe-integration-tests</id>
+            <phase>integration-test</phase>
+            <goals>
+                <goal>integration-test</goal>
+            </goals>
+        </execution>
+    </executions>
+				</plugin>
 		</plugins>
 	</build>
 </project>
