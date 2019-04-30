@@ -6,9 +6,9 @@ jdk: oraclejdk8
 script: mvn clean verify
 script: mvn test
 before_script: cd Evaluator/src/test/java/evaluator/service
-script: ./EvaluatorServiceTests.java test
+script: java ./EvaluatorServiceTests.java
 before_script: cd Evaluator/src/test/java/evaluator/controller
-script: ./EvaluatorControllerTests.java test
+script: java ./EvaluatorControllerTests.java
 
 
 
