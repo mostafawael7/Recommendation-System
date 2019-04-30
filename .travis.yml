@@ -8,10 +8,10 @@ script: mvn test
 script: mvn test -f ./source/pom.xml
 before_script: cd Evaluator/src/test/java/evaluator/controller
 script:
-- java ./EvaluatorControllerTests.java test
+- ./EvaluatorControllerTests.java test
 before_script: cd Evaluator/src/test/java/evaluator/service
 script:
-- java ./EvaluatorServiceTests.java test
+- ./EvaluatorServiceTests.java test
 
 
 
