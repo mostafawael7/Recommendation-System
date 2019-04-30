@@ -1,14 +1,12 @@
 language: java
-sudo: false
+sudo: true
 install: true
 jdk: oraclejdk8
  
 script: mvn clean verify
 script: mvn test
 before_script: cd Evaluator/src/test/java/evaluator/service
-script: java EvaluatorServiceTests.java
-before_script: cd Evaluator/src/test/java/evaluator/controller
-script: java EvaluatorControllerTests.java
+script: java ./EvaluatorServiceTests.java test
 
 
 
