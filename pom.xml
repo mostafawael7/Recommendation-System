@@ -42,6 +42,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				    <configuration>
+    <includes>
+   
+        <include>**/EvaluatorServiceTests.java</include>
+	    <include>**/EvaluatorServiceTests.java</include>
+    </includes>
+    </configuration>
 			</plugin>
 		</plugins>
 	</build>
