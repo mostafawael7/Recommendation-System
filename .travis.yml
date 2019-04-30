@@ -11,7 +11,7 @@ script:
 - ./EvaluatorControllerTests.java test
 before_script: cd Evaluator/src/test/java/evaluator/service
 script:
-- ./EvaluatorServiceTests.java test
+- ./EvaluatorServiceTests.java run
 
 
 
