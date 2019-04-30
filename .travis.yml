@@ -5,10 +5,12 @@ jdk: oraclejdk8
  
 script: mvn clean verify
 script: mvn test
-before_script: cd Evaluator/src/test/java/evaluator/
+before_script: cd Evaluator/src/test/java/evaluator/service
 script: ./EvaluatorServiceTests.java test
-before_script: cd Evaluator/src/test/java/evaluator/controller/service/
+before_script: cd Evaluator/src/test/java/evaluator/controller
 script: ./EvaluatorControllerTests.java test
+
+
 
 
 
