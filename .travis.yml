@@ -5,6 +5,8 @@ jdk: oraclejdk8
  
 script: mvn clean verify
 script: mvn test
+script: java ./Evaluator/src/test/java/evaluator/service/EvaluatorServiceTests.java
+script: java ./Evaluator/src/test/java/evaluator/controller/EvaluatorControllerTests.java
 
 
 
