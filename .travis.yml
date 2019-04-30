@@ -1,5 +1,5 @@
 language: java
-sudo: true
+sudo: false
 install: true
 jdk: oraclejdk8
  
@@ -8,10 +8,10 @@ script: mvn test
 script: mvn test -f ./source/pom.xml
 before_script: cd Evaluator/src/test/java/evaluator/controller
 script:
-- ./EvaluatorControllerTests.java test
-
-
-
+- java ./EvaluatorControllerTests.java test
+before_script: cd Evaluator/src/test/java/evaluator/service
+script:
+- java ./EvaluatorServiceTests.java test
 
 
 
